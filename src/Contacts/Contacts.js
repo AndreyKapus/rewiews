@@ -1,8 +1,10 @@
+import { ContactsHeader } from "./Contacts.styled";
+
 const Contacts = ({contactsList, onDeleteContact}) => {
 
     return (
       <>
-        <h1>Contacts</h1>
+        <ContactsHeader>Contacts</ContactsHeader>
         <ol>
           {contactsList ? contactsList.map(({id, name, number, company, link}) => (
           <li key={id}>
