@@ -4,6 +4,9 @@ import Contacts from './Contacts/Contacts';
 import { nanoid } from 'nanoid';
 import FindContact from './FindContacts/FindContacts';
 import Total from './Total/Total';
+import { Container } from './GlobalStyles/global.styled';
+
+
 document.title = 'Rewiew App'
 
 const App = () => {
@@ -13,12 +16,13 @@ const App = () => {
   const [filter, setFilter] = useState('');
   const [total, setTotal] = useState(0);
 
-  const onSubmit = ({userName, userNumber, company}) => {
+  const onSubmit = ({userName, userNumber, company, link}) => {
     const contact = {
       id: nanoid(),
       name: userName,
       number: userNumber,
       company: company,
+      link: link,
     };
 
     const existingContact = contacts.find((el) => {
@@ -54,12 +58,12 @@ const App = () => {
   }, [contacts])
 
     return (
-        <div>
+        <Container>
             <Form onSubmit={onSubmit}/>
             <FindContact onChangeFilter={filteredContactValue}/>
             <Contacts contactsList={findContacts()} onDeleteContact={deleteContact}/>
             <Total total={total}/>
-        </div>
+        </Container>
     );
   }
 

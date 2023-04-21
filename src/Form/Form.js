@@ -5,6 +5,7 @@ const Form = ({onSubmit}) => {
   const [userName, setUserName] = useState('');
   const [userNumber, setUserNumber] = useState('');
   const [company, setCompany] = useState('');
+  const [link, setLink] = useState('');
 
   const handleChange = (e) => {
     const {name, value} = e.target;
@@ -22,13 +23,17 @@ const Form = ({onSubmit}) => {
         setCompany(value);
         break;
 
+      case 'link':
+        setLink(value);
+        break;
+
       default: return;
     }
   }
 
   const handleSubmit = (e) => {
       e.preventDefault();
-      onSubmit({userName, userNumber, company});
+      onSubmit({userName, userNumber, company, link});
 
   };
 
@@ -44,7 +49,7 @@ const Form = ({onSubmit}) => {
 
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
-          />Name
+          />Job vacancy
         </label>
 
         <label>
@@ -54,6 +59,15 @@ const Form = ({onSubmit}) => {
               onChange={handleChange}
               required
           />Company
+        </label>
+
+        <label>
+          <input
+              type="text"
+              name="link"
+              onChange={handleChange}
+              required
+          />Link
         </label>
 
         <label>
