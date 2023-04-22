@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState } from "react";
+import {AdForm, FormLabel, FormInput, FormButton} from './Form.styled'
 
 
 const Form = ({onSubmit}) => {
@@ -40,48 +41,47 @@ const Form = ({onSubmit}) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label>
-          <input
+      <AdForm onSubmit={handleSubmit}>
+        <FormLabel>Job vacancy
+          <FormInput
               type="text"
               name="name"
               onChange={handleChange}
-
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
-          />Job vacancy
-        </label>
+          />
+        </FormLabel>
 
-        <label>
-          <input
+        <FormLabel>Company
+          <FormInput
               type="text"
               name="company"
               onChange={handleChange}
               required
-          />Company
-        </label>
+          />
+        </FormLabel>
 
-        <label>
-          <input
+        <FormLabel>Link
+          <FormInput
               type="text"
               name="link"
               onChange={handleChange}
               required
-          />Link
-        </label>
+          />
+        </FormLabel>
 
-        <label>
-          <input
+        <FormLabel>Date
+          <FormInput
               type="tel"
               name="number"
               onChange={handleChange}
               pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
-          />Date
-        </label>
-        <button type="submit">Add contact</button>
-      </form>
+          />
+        </FormLabel>
+        <FormButton type="submit">Add contact</FormButton>
+      </AdForm>
     </>
   )
 }
