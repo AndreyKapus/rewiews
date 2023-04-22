@@ -1,8 +1,13 @@
+import {FindInput, FindInputWrapper, FindInputLabel} from './FindContacts.styled'
+
 const FindContact = ({onChangeFilter}) => {
     return (
-      <>
-        <input type="text" onChange={onChangeFilter}/>
-      </>
+      <FindInputWrapper>
+        <FindInputLabel>
+          <FindInput type="text" onChange={onChangeFilter}/>
+          Search
+        </FindInputLabel>
+      </FindInputWrapper>
     )
   }
   

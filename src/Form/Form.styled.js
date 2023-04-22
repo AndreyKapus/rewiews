@@ -30,6 +30,16 @@ export const FormInput = styled.input`
 export const FormButton = styled.button`
 @media screen and (min-width: ${p => p.theme.screens.mobWidth}) {
     max-width: 300px;
+    height: 30px;
+    color: ${p => p.theme.colors.white};
+    background-color: ${p => p.theme.colors.accent};
+    margin-top: 24px;
+    border-radius: 5px;
+    border: 1px solid ${p => p.theme.colors.accent};
+}
+
+@media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+    max-width: 400px;
 }
 
 `
