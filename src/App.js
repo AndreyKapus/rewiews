@@ -39,7 +39,7 @@ const App = () => {
   const findContacts = () => {
     const filteredContact = filter.toLowerCase();
     return contacts.filter(contact =>
-      contact.name.includes(filteredContact.toLowerCase())
+      contact.company.includes(filteredContact.toLowerCase())
     )
   };
 

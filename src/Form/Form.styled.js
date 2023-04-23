@@ -10,7 +10,7 @@ export const FormLabel = styled.label`
 display: flex;
 flex-direction: column;
 max-width: 300px;
-&:not(:first-child) {
+&:not(first-of-type) {
     margin-top: 12px;
 }
 `;
