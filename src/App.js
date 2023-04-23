@@ -1,11 +1,9 @@
 import {useEffect, useState}  from 'react';
-import Form from './Form/Form';
-import Contacts from './Contacts/Contacts';
+import Form from './Components/Form/Form';
+import Contacts from './Components/Contacts/Contacts';
 import { nanoid } from 'nanoid';
-import FindContact from './FindContacts/FindContacts';
-import Total from './Total/Total';
-import { Container } from './GlobalStyles/global.styled';
-
+import { Container, AppWrapper } from './GlobalStyles/global.styled';
+import NavBar from './Components/NavBar/NavBar'
 
 document.title = 'Rewiew App'
 
@@ -59,10 +57,11 @@ const App = () => {
 
     return (
         <Container>
+          <NavBar onChangeFilter={filteredContactValue}/>
+          <AppWrapper>
             <Form onSubmit={onSubmit}/>
-            <FindContact onChangeFilter={filteredContactValue}/>
-            <Contacts contactsList={findContacts()} onDeleteContact={deleteContact}/>
-            <Total total={total}/>
+            <Contacts contactsList={findContacts()} onDeleteContact={deleteContact} total={total}/>
+          </AppWrapper>
         </Container>
     );
   }

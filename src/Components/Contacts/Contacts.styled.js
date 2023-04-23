@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-export const ContactsHeader = styled.h1`
+export const ContactsHeader = styled.h2`
 text-align: center;
 margin-top: 30px;
 font-size: ${p => p.theme.fontSizes.titleSizeMob};
@@ -20,7 +20,7 @@ position: relative;
 border: 1px solid black;
 border-radius: 5px;
 padding: 10px;
-&:not(first-of-type) {
+&:not(:first-of-type) {
     margin-top: 12px;
 };
 `;
@@ -28,6 +28,9 @@ padding: 10px;
 export const ContactsName = styled.p`
 color: ${p => p.theme.colors.secondaryText};
 font-weight: ${p => p.theme.fontWaight.max};
+&:not(:first-of-type) {
+    margin-top: 5px;
+};
 `;
 
 export const ContactsNameValue = styled.span`
@@ -36,9 +39,9 @@ font-weight: ${p => p.theme.fontWaight.min};
 `;
 
 export const ContactsLink = styled.a`
-
 color: ${p => p.theme.colors.accent};
-
+display: block;
+margin-top: 5px;
 `;
 
 export const ContactsBtn = styled.button`

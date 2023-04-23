@@ -5,7 +5,7 @@ const FindContact = ({onChangeFilter}) => {
       <FindInputWrapper>
         <FindInputLabel>
           <FindInput type="text" onChange={onChangeFilter}/>
-          Search
+          
         </FindInputLabel>
       </FindInputWrapper>
     )

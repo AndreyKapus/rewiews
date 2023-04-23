@@ -1,10 +1,10 @@
 import { ContactsHeader, ContactsListItem, ContactsList, ContactsBtn, ContactsLink, ContactsName, ContactsNameValue } from "./Contacts.styled";
 
-const Contacts = ({contactsList, onDeleteContact}) => {
+const Contacts = ({contactsList, onDeleteContact, total}) => {
 
     return (
       <>
-        <ContactsHeader>Contacts</ContactsHeader>
+        <ContactsHeader>Contacts: {total}</ContactsHeader>
         <ContactsList>
           {contactsList ? contactsList.map(({id, name, number, company, link}) => (
           <ContactsListItem key={id}>

@@ -54,4 +54,15 @@ margin: 0 auto;
 @media screen and (min-width: 1200px) {
     width: 1280px;
   };
+`;
+
+export const AppWrapper = styled.div`
+@media screen and (min-width: ${p => p.theme.screens.tabWidth}) {
+  display: flex;
+  justify-content: space-around;
+};
+
+@media screen and (min-width: ${p => p.theme.screens.deskWidth}) {
+  justify-content: space-between;
+}
 `
