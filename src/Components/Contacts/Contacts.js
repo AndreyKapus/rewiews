@@ -1,9 +1,9 @@
-import { ContactsHeader, ContactsListItem, ContactsList, ContactsBtn, ContactsLink, ContactsName, ContactsNameValue } from "./Contacts.styled";
+import { ContactsWrapper, ContactsHeader, ContactsListItem, ContactsList, ContactsBtn, ContactsLink, ContactsName, ContactsNameValue } from "./Contacts.styled";
 
 const Contacts = ({contactsList, onDeleteContact, total}) => {
 
     return (
-      <>
+      <ContactsWrapper>
         <ContactsHeader>Contacts: {total}</ContactsHeader>
         <ContactsList>
           {contactsList ? contactsList.map(({id, name, number, company, link}) => (
@@ -15,7 +15,7 @@ const Contacts = ({contactsList, onDeleteContact, total}) => {
             <ContactsBtn type="button" onClick={() => onDeleteContact(id)}>x</ContactsBtn>
           </ContactsListItem>)): <div>Not found</div>}
         </ContactsList>
-      </>
+      </ContactsWrapper>
     )
   }
   

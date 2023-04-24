@@ -1,5 +1,9 @@
 import styled from '@emotion/styled'
 
+export const ContactsWrapper = styled.div`
+display: block;
+`
+
 export const ContactsHeader = styled.h2`
 text-align: center;
 margin-top: 30px;

@@ -35,12 +35,11 @@ const Form = ({onSubmit}) => {
   const handleSubmit = (e) => {
       e.preventDefault();
       onSubmit({userName, userNumber, company, link});
-
   };
 
-
   return (
-    <>
+    <div>
+      <h2>Add contact</h2>
       <AdForm onSubmit={handleSubmit}>
         <FormLabel>Job vacancy
           <FormInput
@@ -82,7 +81,7 @@ const Form = ({onSubmit}) => {
         </FormLabel>
         <FormButton type="submit">Add contact</FormButton>
       </AdForm>
-    </>
+    </div>
   )
 }
 
