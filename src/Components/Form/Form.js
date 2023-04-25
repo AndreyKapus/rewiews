@@ -2,7 +2,7 @@ import { useState } from "react";
 import {AdForm, FormLabel, FormInput, FormButton} from './Form.styled'
 
 
-const Form = ({onSubmit}) => {
+const Form = ({onSubmit, closeModal}) => {
   const [userName, setUserName] = useState('');
   const [userNumber, setUserNumber] = useState('');
   const [company, setCompany] = useState('');
@@ -39,11 +39,11 @@ const Form = ({onSubmit}) => {
       setUserNumber('');
       setCompany('');
       setLink('');
+      closeModal();
   };
 
   return (
     <div>
-      <h2>Add contact</h2>
       <AdForm onSubmit={handleSubmit}>
         <FormLabel>Job vacancy
           <FormInput

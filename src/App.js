@@ -1,9 +1,9 @@
 import {useEffect, useState}  from 'react';
-import Form from './Components/Form/Form';
 import Contacts from './Components/Contacts/Contacts';
 import { nanoid } from 'nanoid';
 import { Container, AppWrapper } from './GlobalStyles/global.styled';
 import NavBar from './Components/NavBar/NavBar'
+import FormModal from './Components/Modal/Modal';
 
 document.title = 'Rewiew App'
 
@@ -59,7 +59,8 @@ const App = () => {
         <Container>
           <NavBar onChangeFilter={filteredContactValue}/>
           <AppWrapper>
-            <Form onSubmit={onSubmit}/>
+            <FormModal onSubmit={onSubmit}/>
+            {/* <Form onSubmit={onSubmit}/> */}
             <Contacts contactsList={findContacts()} onDeleteContact={deleteContact} total={total}/>
           </AppWrapper>
         </Container>
