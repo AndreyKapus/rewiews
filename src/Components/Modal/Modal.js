@@ -1,33 +1,15 @@
 import { useState } from 'react';
 import Modal from 'react-modal';
 import Form from '../Form/Form';
-
-const customStyles = {
-    content: {
-      width: '400px',
-      height: 'auto',
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
+import {OpenModalBtn, customStyles, ModalWrapper} from './Modal.styled'
 
   Modal.setAppElement('body');
 
  const FormModal = ({onSubmit}) => {
-    let subtitle;
     const [modalIsOpen, setIsOpen] = useState(false);
   
     function openModal() {
       setIsOpen(true);
-    }
-  
-    function afterOpenModal() {
-      // references are now sync'd and can be accessed.
-      subtitle.style.color = '#f00';
     }
   
     function closeModal() {
@@ -35,11 +17,10 @@ const customStyles = {
     }
   
     return (
-      <div>
-        <button onClick={openModal}>Open Modal</button>
+      <ModalWrapper>
+        <OpenModalBtn onClick={openModal}>Add</OpenModalBtn>
         <Modal
           isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
@@ -49,7 +30,7 @@ const customStyles = {
           <form>
           </form>
         </Modal>
-      </div>
+      </ModalWrapper>
     );
   };
 
