@@ -27,6 +27,9 @@ padding: 10px;
 &:not(:first-of-type) {
     margin-top: 12px;
 };
+min-width: 200px;
+max-width: 290px;
+
 `;
 
 export const ContactsName = styled.p`

@@ -9,7 +9,7 @@ export const theme = {
     fontSizes: {
         textSize: '16px',
         titleSizeMob: '32px',
-        titleSizeDesk: '46px',
+        titleSizeDesk: '44px',
         subTitleSize: '22px',
     },
 

@@ -1,10 +1,11 @@
 import FindContact from "../FindContacts/FindContacts";
-import {NavBarWrapper} from './NavBar.styled'
+import {NavBarWrapper} from './NavBar.styled';
+import {AppTitle} from './NavBar.styled'
 
 const NavBar = ({onChangeFilter}) => {
     return(
         <NavBarWrapper>
-            <h1>Reviews</h1>
+            <AppTitle>Reviews</AppTitle>
             <FindContact onChangeFilter={onChangeFilter}/>
         </NavBarWrapper>
     )

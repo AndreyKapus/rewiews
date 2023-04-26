@@ -56,14 +56,17 @@ const App = () => {
   }, [contacts])
 
     return (
-        <Container>
-          <NavBar onChangeFilter={filteredContactValue}/>
+      <>
+        <NavBar onChangeFilter={filteredContactValue}/>
+          <Container>
+          
           <AppWrapper>
             <FormModal onSubmit={onSubmit}/>
             {/* <Form onSubmit={onSubmit}/> */}
             <Contacts contactsList={findContacts()} onDeleteContact={deleteContact} total={total}/>
           </AppWrapper>
         </Container>
+        </>
     );
   }
 
